@@ -3,7 +3,7 @@
 // ingredients, etc.
 
 async function mainFetch(endUrl) {
-    let response = await fetch(`http://www.thecocktaildb.com/api/json/v1/1/${endUrl}`);
+    let response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/${endUrl}`);
 
     try {
         let data = await response.json();
