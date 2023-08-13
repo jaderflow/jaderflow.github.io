@@ -64,14 +64,18 @@ a:link{
 
 /* Background */
 
-#inputContainer {
-    text-align: center;
+#dateForm {
+    justify-content: center;
     padding: 1rem;
 }
 
-#inputContainer p {
+#dateForm p {
     text-align: center;
     margin-top: 0.25rem;
+}
+
+#dateForm label {
+    padding-right: 0.25rem;
 }
 
 #dateBtn {
@@ -506,7 +510,7 @@ footer {
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    #inputContainer {
+    #dateForm {
         grid-column: 1/3;
     }
 }

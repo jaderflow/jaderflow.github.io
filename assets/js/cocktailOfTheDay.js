@@ -14,30 +14,43 @@ function chooseRandomCocktail(date, rawData) {
 }
 
 function addDatePicker(dateStr) {
-    const inputContainer = document.createElement('div');
-    inputContainer.id = 'inputContainer';
+    const dateForm = document.createElement('form');
+    dateForm.action = window.location.href;;
+    dateForm.id = 'dateForm';
+
+    dateForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        let url = new URL(window.location.href);
+        url.searchParams.set('date', dateInput.value.toString());
+        window.location.href = url.href;
+    });
+
+    const pElementDate = document.createElement('p');
+
+    const labelDate = document.createElement('label');
+    labelDate.htmlFor = 'dateInput';
+    labelDate.innerHTML = 'Choose your own date:'
 
     const dateInput = document.createElement('input');
     dateInput.type = 'date';
     dateInput.id = 'dateInput';
     dateInput.value = dateStr;
 
-    const pElement = document.createElement('p');
+    const pElementBtn = document.createElement('p');
     const dateBtn = document.createElement('input');
-    dateBtn.type = 'button';
+    dateBtn.type = 'submit';
     dateBtn.id = 'dateBtn';
     dateBtn.value = 'Change Date';
     
-    dateBtn.addEventListener('click', function() {
-        let url = new URL(window.location.href);
-        url.searchParams.set('date', dateInput.value.toString());
-        window.location.href = url.href;
-    });
+    pElementDate.appendChild(labelDate);
+    pElementDate.appendChild(dateInput);
+    dateForm.appendChild(pElementDate);
+    
+    pElementBtn.appendChild(dateBtn);
+    dateForm.appendChild(pElementBtn);
 
-    inputContainer.appendChild(dateInput);
-    pElement.appendChild(dateBtn);
-    inputContainer.appendChild(pElement);
-    COCKTAILOFTHEDAY.appendChild(inputContainer);
+    COCKTAILOFTHEDAY.appendChild(dateForm);
 }
 
 function displayDate(dateStr) {
