@@ -4,7 +4,8 @@
 import { displayFullCocktail } from "./displayCocktail.js";
 import { fetchIDLookup } from "./fetchCocktails.js";
 
-const SPECIFICCOCKTAIL = document.querySelector('#specificCocktail');
+const SPECIFICCOCKTAIL = document.querySelector('#specificCocktail section');
+const HEADER = document.querySelector('h2');
 
 function cocktailNotFound(drinkId) {
     const pElement = document.createElement('p');
@@ -20,6 +21,7 @@ async function specificCocktial(drinkId) {
     if (cocktailData.drinks) {
         const drinkName = cocktailData.drinks[0]['strDrink'];
         document.title = `${drinkName} - Cocktail Compass`;
+        HEADER.innerHTML = drinkName;
         displayFullCocktail(SPECIFICCOCKTAIL, cocktailData.drinks[0]);
     } else {
         cocktailNotFound(drinkId);    
