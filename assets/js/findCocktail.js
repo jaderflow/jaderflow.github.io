@@ -80,6 +80,7 @@ function main() {
     searchByVariant.className = 'selected';
 
     PAGEHEADER.innerHTML = `Search by ${id}`;
+    SEARCHINPUT.ariaLabel = `Search for cocktail by ${id}`;
     SEARCHINPUT.placeholder = `Search... (e.g. ${SEARCHTERMEXAMPLES[id]}, etc.)`;
 
     if (userInput && userInput.trim() !== "") {
