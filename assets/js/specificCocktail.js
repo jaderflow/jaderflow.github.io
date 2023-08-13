@@ -18,6 +18,8 @@ function cocktailNotFound(drinkId) {
 async function specificCocktial(drinkId) {
     const cocktailData = await fetchIDLookup(drinkId);
     if (cocktailData.drinks) {
+        const drinkName = cocktailData.drinks[0]['strDrink'];
+        document.title = `${drinkName} - Cocktail Compass`;
         displayFullCocktail(SPECIFICCOCKTAIL, cocktailData.drinks[0]);
     } else {
         cocktailNotFound(drinkId);    
