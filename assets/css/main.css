@@ -287,11 +287,11 @@ main {
     display: flex;
 }
 
-div.ingredients > ul {
+.ingredients > ul {
     margin: 0.25rem 0 0;
 }
 
-div.ingredients > ul > li {
+.ingredients > ul > li {
     font-size: 0.9rem;
     margin-left: 0.25rem;
 }
@@ -381,7 +381,7 @@ footer {
         padding-bottom: 0.5rem;
     }
 
-    div.instructions > p {
+    .instructions > p {
         text-align: center;
         font-size: 0.9rem;
         margin: 0.25rem 0.25rem 0;
@@ -446,15 +446,15 @@ footer {
         margin-bottom: 1rem;
     }
 
-    div.ingredients > h4 {
+    .ingredients > h4 {
         margin-top: 0.6rem;
     }
 
-    div.ingredients > ul {
+    .ingredients > ul {
         margin: 0.25rem 0 0;
     }
 
-    div.ingredients > ul > li {
+    .ingredients > ul > li {
         margin-top: 0.5rem;
     }
 
@@ -465,15 +465,15 @@ footer {
         margin: 0 1rem;
     }
 
-    div.instructions > h4 {
+    .instructions > h4 {
         text-align: center;
         margin-top: 0.6rem;
     }
 
-    div.instructions > p {
+    .instructions > p {
         font-size: 0.9rem;
         text-align: center;
-        margin: 0.25rem auto 0.6;
+        margin: 0.25rem auto 0.6rem;
     }
 
     footer > ul > li {
